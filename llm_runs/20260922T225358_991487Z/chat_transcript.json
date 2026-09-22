@@ -1,0 +1,59 @@
+{
+  "model_sha256": "f26904a1bb5a18e3cb5f70cedbad4c13656af81ffae64588964f0b6a2a6d9fe3",
+  "completed_steps": 3000,
+  "fresh_context_per_prompt": true,
+  "temperature": 0.8,
+  "max_tokens": 24,
+  "turns": [
+    {
+      "prompt": "the customer",
+      "seed": 2026,
+      "response": "recommended the item after checking the price .",
+      "unknown_prompt_words": [],
+      "prompt_truncated": false
+    },
+    {
+      "prompt": "the doctor explained the",
+      "seed": 2027,
+      "response": "nurse .",
+      "unknown_prompt_words": [
+        "explained"
+      ],
+      "prompt_truncated": false
+    },
+    {
+      "prompt": "the opposite of tall is",
+      "seed": 2028,
+      "response": "fast .",
+      "unknown_prompt_words": [],
+      "prompt_truncated": false
+    },
+    {
+      "prompt": "the cup is not full . it is",
+      "seed": 2029,
+      "response": "a goose .",
+      "unknown_prompt_words": [],
+      "prompt_truncated": false
+    },
+    {
+      "prompt": "a sparrow is a",
+      "seed": 2030,
+      "response": "bird . a truck is a vehicle .",
+      "unknown_prompt_words": [],
+      "prompt_truncated": false
+    },
+    {
+      "prompt": "what should i eat for lunch ?",
+      "seed": 2031,
+      "response": "the price .",
+      "unknown_prompt_words": [
+        "?",
+        "eat",
+        "i",
+        "should",
+        "what"
+      ],
+      "prompt_truncated": false
+    }
+  ]
+}

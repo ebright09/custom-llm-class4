@@ -1,0 +1,66 @@
+{
+  "model": "llm_runs/20260922T225358_991487Z/model.pt",
+  "model_sha256": "f26904a1bb5a18e3cb5f70cedbad4c13656af81ffae64588964f0b6a2a6d9fe3",
+  "completed_steps": 3000,
+  "fresh_context_per_prompt": true,
+  "temperature": 0.8,
+  "max_tokens": 24,
+  "turns": [
+    {
+      "prompt": "the pen is inside the jar . the jar contains the",
+      "seed": 2026,
+      "response": "pen .",
+      "unknown_prompt_words": [],
+      "prompt_truncated": false
+    },
+    {
+      "prompt": "the clock is above the sofa . the sofa is",
+      "seed": 2027,
+      "response": "below the clock .",
+      "unknown_prompt_words": [],
+      "prompt_truncated": false
+    },
+    {
+      "prompt": "the opposite of big is",
+      "seed": 2028,
+      "response": "big .",
+      "unknown_prompt_words": [],
+      "prompt_truncated": false
+    },
+    {
+      "prompt": "mia did not buy juice . she bought",
+      "seed": 2029,
+      "response": "cake . mia bought cake .",
+      "unknown_prompt_words": [],
+      "prompt_truncated": false
+    },
+    {
+      "prompt": "a trout is a",
+      "seed": 2030,
+      "response": "fish . a pine is a tree .",
+      "unknown_prompt_words": [],
+      "prompt_truncated": false
+    },
+    {
+      "prompt": "the opposite of hot is",
+      "seed": 2031,
+      "response": "sharp .",
+      "unknown_prompt_words": [],
+      "prompt_truncated": false
+    },
+    {
+      "prompt": "can you help me with my homework ?",
+      "seed": 2032,
+      "response": "is above the .",
+      "unknown_prompt_words": [
+        "?",
+        "can",
+        "help",
+        "homework",
+        "me",
+        "you"
+      ],
+      "prompt_truncated": false
+    }
+  ]
+}

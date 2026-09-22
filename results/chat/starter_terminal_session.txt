@@ -1,0 +1,12 @@
+$ python chat.py --model llm_runs/20260922T224924_640441Z/model.pt --transcript results/chat/starter_terminal_chat.json
+Tiny language model: short continuations, not a general assistant.
+Each prompt starts fresh. Context: 48 tokens. Type /quit to exit.
+You: the teacher
+Model: selected the item after checking the price .
+You: the report about the bus explains the
+Model: traffic in detail .
+You: the opposite of hot is
+Model: [empty response]
+Unknown words: hot, is, opposite
+You: /quit
+Saved transcript: results/chat/starter_terminal_chat.json

@@ -1,0 +1,20 @@
+$ python chat.py --model llm_runs/20260922T225358_991487Z/model.pt --transcript results/chat/expanded_terminal_chat.json
+Tiny language model: short continuations, not a general assistant.
+Each prompt starts fresh. Context: 48 tokens. Type /quit to exit.
+You: the pen is inside the jar . the jar contains the
+Model: pen .
+You: the clock is above the sofa . the sofa is
+Model: below the clock .
+You: the opposite of big is
+Model: big .
+You: mia did not buy juice . she bought
+Model: cake . mia bought cake .
+You: a trout is a
+Model: fish . a pine is a tree .
+You: the opposite of hot is
+Model: sharp .
+You: can you help me with my homework ?
+Model: is above the .
+Unknown words: ?, can, help, homework, me, you
+You: /quit
+Saved transcript: results/chat/expanded_terminal_chat.json

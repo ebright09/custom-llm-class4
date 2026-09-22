@@ -1,0 +1,53 @@
+{
+  "files": [
+    {
+      "file": "extension/categories_and_analogies.md",
+      "bytes": 36942,
+      "sha256": "ee0670da832284bcb1c8ad13ffb48154d707eb8f2ebbda3dbf2442745f2fe8b9",
+      "warnings": [],
+      "characters": 36942,
+      "passages": 890,
+      "unique_passages": 890,
+      "preview": "a carp is a fish.a wrench is a tool.\na truck is a vehicle.a lemon is a fruit.\na kid grows into a goat.a caterpillar grows into a butterfly.\na grape is a fruit.a goldfish is a fish.\na saw is a tool.a goldfish is a fish.\na mango is a fruit .\na chick grows into a hen.a calf grows into a cow.\na willow i"
+    },
+    {
+      "file": "extension/negation.md",
+      "bytes": 51717,
+      "sha256": "d3ccd78730dea822caaee3303e38372599835ea763619bcd0571fdfda5cfb145",
+      "warnings": [],
+      "characters": 51717,
+      "passages": 900,
+      "unique_passages": 900,
+      "preview": "sam did not bring rice.he brought cheese.sam brought cheese.\nlina did not order bread.she ordered soup.lina ordered soup.\nrosa did not order water.she ordered tea.rosa ordered tea.\nthe chair is not black.it is brown.the chair is brown.\nzoe did not choose coffee.she chose juice.zoe chose juice.\njonas"
+    },
+    {
+      "file": "extension/opposites.md",
+      "bytes": 30083,
+      "sha256": "6491af0f2b49e5651b8a70d4a6854f35576d086ca89a4bc01a60698f53db61bb",
+      "warnings": [],
+      "characters": 30083,
+      "passages": 644,
+      "unique_passages": 644,
+      "preview": "the first room was old , but the second room was young .\nthe path is bright.the opposite of bright is dim.\nthe first shirt was low , but the second shirt was high .\nnear and far are opposites .\nthe river was cold today .\nin class we learned that the opposite of day is night .\nmy teacher said the opp"
+    },
+    {
+      "file": "extension/spatial_relations.md",
+      "bytes": 55616,
+      "sha256": "281aea810b0c4ecac465d04f155def59986cba9e0e2971f63cb679f9c0954b09",
+      "warnings": [],
+      "characters": 55616,
+      "passages": 900,
+      "unique_passages": 900,
+      "preview": "the bowl contains the shirt.the shirt is inside the bowl.\nthe shop is left of the box.the box is to the right of the shop.\nthe car is left of the ball.the ball is to the right of the car.\nthe cup is left of the lamp.the lamp is to the right of the cup.\nthe window is left of the plate.the plate is to"
+    }
+  ],
+  "ignored": [],
+  "external_passages": 3334,
+  "mode": "classroom",
+  "base_passages": 6200,
+  "unique_passages": 7926,
+  "new_unique_passages": 3334,
+  "duplicates_removed": 1608,
+  "max_passage_tokens": 47,
+  "split_unit": "deduplicated passage, not source file"
+}

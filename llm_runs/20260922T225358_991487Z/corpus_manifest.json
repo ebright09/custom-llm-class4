@@ -1,0 +1,53 @@
+{
+  "files": [
+    {
+      "file": "extension/categories_and_analogies.md",
+      "bytes": 36942,
+      "sha256": "7caa4020bc371d79c3dc3abd726a35a7a22b55d640cc12550a79267e24aace7a",
+      "warnings": [],
+      "characters": 36942,
+      "passages": 890,
+      "unique_passages": 890,
+      "preview": "a herring is a fish.a sparrow is a bird.\na shovel is a tool.a van is a vehicle.\nan oak is a tree.a copper is a metal.\na kid grows into a goat.a caterpillar grows into a butterfly.\nthe carrot was fresh from the farm .\na pea is a vegetable.a penguin is a bird.\na pigeon is a bird.a shark is a fish.\na g"
+    },
+    {
+      "file": "extension/negation.md",
+      "bytes": 52774,
+      "sha256": "1ed7dba5de359d85b4f8122ef62ba8448c6ac5cf1c162c6ca1b5173d2b6fb2a9",
+      "warnings": [],
+      "characters": 52774,
+      "passages": 930,
+      "unique_passages": 930,
+      "preview": "lina did not order bread.she ordered soup.lina ordered soup.\nthe umbrella is not gray.it is brown.the umbrella is brown.\nlina did not want bread.she wanted soup.lina wanted soup.\nthe chair is not small.it is big.the chair is big.\njonas did not order juice.he ordered bread.jonas ordered bread.\nkira d"
+    },
+    {
+      "file": "extension/opposites.md",
+      "bytes": 33003,
+      "sha256": "5a8e20073d2b2fb2e4d90879b1e54c1068a5712e9d3b6ba915b6655373ed2e23",
+      "warnings": [],
+      "characters": 33003,
+      "passages": 744,
+      "unique_passages": 744,
+      "preview": "the first path was weak , but the second path was strong .\nthe first road was sour , but the second road was sweet .\nthe first town was good , but the second town was bad .\nmy teacher said the opposite of up is down .\nthe opposite of small is big .\nshe found a round coin .\nshe found a round bell .\na"
+    },
+    {
+      "file": "extension/spatial_relations.md",
+      "bytes": 59566,
+      "sha256": "4064ebf2da6f2c4f7ac485f9708ef04f24e73eea931e7538b176e616d88221d2",
+      "warnings": [],
+      "characters": 59566,
+      "passages": 1016,
+      "unique_passages": 1016,
+      "preview": "the sofa stood beside the tree .\nthe sofa is above the clock.the clock is below the sofa.\nthe door is right of the tree.the tree is to the left of the door.\nthe mirror is above the table.the table is below the mirror.\nthe ball is left of the shop.the shop is to the right of the ball.\nthe rug is abov"
+    }
+  ],
+  "ignored": [],
+  "external_passages": 3580,
+  "mode": "classroom",
+  "base_passages": 6200,
+  "unique_passages": 8172,
+  "new_unique_passages": 3580,
+  "duplicates_removed": 1608,
+  "max_passage_tokens": 47,
+  "split_unit": "deduplicated passage, not source file"
+}

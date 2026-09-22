@@ -1,0 +1,59 @@
+{
+  "model_sha256": "6c84f12b44989dc7cd91290cba00040c9aae67b954dbc99a1e6b076ca720fa97",
+  "completed_steps": 3000,
+  "fresh_context_per_prompt": true,
+  "temperature": 0.8,
+  "max_tokens": 24,
+  "turns": [
+    {
+      "prompt": "the customer",
+      "seed": 2026,
+      "response": "recommended the package after checking the price .",
+      "unknown_prompt_words": [],
+      "prompt_truncated": false
+    },
+    {
+      "prompt": "the doctor explained the",
+      "seed": 2027,
+      "response": "patient .",
+      "unknown_prompt_words": [
+        "explained"
+      ],
+      "prompt_truncated": false
+    },
+    {
+      "prompt": "the opposite of tall is",
+      "seed": 2028,
+      "response": "poor .",
+      "unknown_prompt_words": [],
+      "prompt_truncated": false
+    },
+    {
+      "prompt": "the cup is not full . it is",
+      "seed": 2029,
+      "response": "gray . the cup is brown .",
+      "unknown_prompt_words": [],
+      "prompt_truncated": false
+    },
+    {
+      "prompt": "a sparrow is a",
+      "seed": 2030,
+      "response": "bird . a carp is a fish .",
+      "unknown_prompt_words": [],
+      "prompt_truncated": false
+    },
+    {
+      "prompt": "what should i eat for lunch ?",
+      "seed": 2031,
+      "response": "a discussion of design .",
+      "unknown_prompt_words": [
+        "?",
+        "eat",
+        "i",
+        "should",
+        "what"
+      ],
+      "prompt_truncated": false
+    }
+  ]
+}

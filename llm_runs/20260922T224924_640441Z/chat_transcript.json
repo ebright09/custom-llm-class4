@@ -1,0 +1,58 @@
+{
+  "model_sha256": "bf49f05b14d5417840f3b551aa61e28c0e521e6d5557f146f3961ffc1afbe84e",
+  "completed_steps": 3000,
+  "fresh_context_per_prompt": true,
+  "temperature": 0.8,
+  "max_tokens": 24,
+  "turns": [
+    {
+      "prompt": "the customer",
+      "seed": 2026,
+      "response": "selected the item after checking the price .",
+      "unknown_prompt_words": [],
+      "prompt_truncated": false
+    },
+    {
+      "prompt": "the doctor explained the",
+      "seed": 2027,
+      "response": "important lecturer during a discussion of journey .",
+      "unknown_prompt_words": [
+        "explained"
+      ],
+      "prompt_truncated": false
+    },
+    {
+      "prompt": "our school has a question about the",
+      "seed": 2028,
+      "response": "local teacher and course .",
+      "unknown_prompt_words": [],
+      "prompt_truncated": false
+    },
+    {
+      "prompt": "the opposite of hot is",
+      "seed": 2029,
+      "response": "",
+      "unknown_prompt_words": [
+        "hot",
+        "is",
+        "opposite"
+      ],
+      "prompt_truncated": false
+    },
+    {
+      "prompt": "what should i eat for lunch ?",
+      "seed": 2030,
+      "response": "the new professor .",
+      "unknown_prompt_words": [
+        "?",
+        "eat",
+        "for",
+        "i",
+        "lunch",
+        "should",
+        "what"
+      ],
+      "prompt_truncated": false
+    }
+  ]
+}

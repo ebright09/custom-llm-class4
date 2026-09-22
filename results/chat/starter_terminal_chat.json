@@ -1,0 +1,35 @@
+{
+  "model": "llm_runs/20260922T224924_640441Z/model.pt",
+  "model_sha256": "bf49f05b14d5417840f3b551aa61e28c0e521e6d5557f146f3961ffc1afbe84e",
+  "completed_steps": 3000,
+  "fresh_context_per_prompt": true,
+  "temperature": 0.8,
+  "max_tokens": 24,
+  "turns": [
+    {
+      "prompt": "the teacher",
+      "seed": 2026,
+      "response": "selected the item after checking the price .",
+      "unknown_prompt_words": [],
+      "prompt_truncated": false
+    },
+    {
+      "prompt": "the report about the bus explains the",
+      "seed": 2027,
+      "response": "traffic in detail .",
+      "unknown_prompt_words": [],
+      "prompt_truncated": false
+    },
+    {
+      "prompt": "the opposite of hot is",
+      "seed": 2028,
+      "response": "",
+      "unknown_prompt_words": [
+        "hot",
+        "is",
+        "opposite"
+      ],
+      "prompt_truncated": false
+    }
+  ]
+}
