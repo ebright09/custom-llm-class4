@@ -8,11 +8,22 @@ training, evaluation and saving code are untouched.
     python prepare_experiment.py starter   # -> custom_llm_starter.ipynb
     python prepare_experiment.py expanded  # -> custom_llm_expanded.ipynb (corpus revision 2)
     python prepare_experiment.py expanded_v1  # first corpus version, kept for the record
+    python prepare_experiment.py setup     # 10-step setup check (TRAINING_STEPS = 10)
 """
 import sys
 import nbformat
 
 PREDICTIONS = {
+"setup": """### My prediction (setup check: 10 steps)
+**Choices.** The classroom corpus with an empty `corpus/` folder and learning rate 0.001,
+but only `TRAINING_STEPS = 10`. The assignment says to try 10 steps first to check that
+the notebook runs from top to bottom before spending the real 3,000-step budget.
+
+**Prediction.** Everything should run and save a results ZIP, but 10 updates out of a
+planned 3,000 should barely move the model: the loss should still be close to
+ln(136) = 4.91, the samples should still be random words, and the eval score should
+stay near chance.
+""",
 "starter": """### My prediction (experiment 1: starter corpus)
 **Choices.** `CORPUS = "classroom"` with an empty `corpus/` folder, so this is the
 unmodified baseline. `TRAINING_STEPS = 3000` because the assignment recommends it as the
@@ -75,6 +86,7 @@ reference, sequence, everyday knowledge) should stay unscorable.
 }
 
 CHAT_PROMPTS = {
+"setup": ["the customer", "the doctor explained the", "the opposite of hot is"],
 "starter": ["the customer", "the doctor explained the", "our school has a question about the",
             "the opposite of hot is", "what should i eat for lunch ?"],
 "expanded_v1": ["the customer", "the doctor explained the", "the opposite of tall is",
@@ -116,5 +128,9 @@ prediction.source = PREDICTIONS[experiment] + "\n## 2." + prediction.source.spli
 chat = nb.cells[23]
 assert chat.source.startswith('CHAT_PROMPT = "the customer"')
 chat.source = CHAT_CELL.format(prompts=CHAT_PROMPTS[experiment])
+if experiment == "setup":
+    settings = nb.cells[1]
+    assert "TRAINING_STEPS = 3000" in settings.source
+    settings.source = settings.source.replace("TRAINING_STEPS = 3000", "TRAINING_STEPS = 10  ")
 nbformat.write(nb, f"custom_llm_{experiment}.ipynb")
 print("Wrote", f"custom_llm_{experiment}.ipynb")

@@ -37,6 +37,66 @@ I kept the supplied nanoGPT and trained two experiments for **3,000 steps**, wit
 
 A correct test means the expected next word had the highest probability among four choices. Unknown prompt words **or any unknown answer choice** make a test unscorable; it still counts as zero out of 48. Free continuations are a separate observation. A score is not the assignment grade, and a fluent sentence is not proof of understanding.
 
+## Assignment 3 evidence
+
+All numbers below come from the saved runs. The full version with every link is in the [detailed experiment report](EXPERIMENT_REPORT.md).
+
+### Corpus and settings
+
+| | Setup check | Starter | Expanded |
+|---|---|---|---|
+| Executed notebook | [custom_llm_setup_10steps.ipynb](experiments/custom_llm_setup_10steps.ipynb) | [custom_llm_starter.ipynb](custom_llm_starter.ipynb) | [custom_llm_expanded.ipynb](custom_llm_expanded.ipynb) |
+| Corpus | Classroom sentences | Classroom sentences | Classroom sentences + [my extension text](corpus/extension) (3,580 new passages) |
+| Unique passages (train / validation) | 4,592 (4,132 / 460) | 4,592 (4,132 / 460) | 8,172 (7,354 / 818) |
+| Vocabulary | 136 words | 136 words | 485 words |
+| Steps · learning rate · seed | **10** · 0.001 · 42 | **3,000** · 0.001 · 42 | **3,000** · 0.001 · 42 |
+| Training time (Mac CPU) | 0.18 s | 15.1 s | 22.6 s |
+| Results folder and ZIP | [folder](llm_runs/20260930T062504_937504Z) · [zip](llm_runs/20260930T062504_937504Z.zip) | [folder](llm_runs/20260922T224924_640441Z) · [zip](llm_runs/20260922T224924_640441Z.zip) | [folder](llm_runs/20260922T225358_991487Z) · [zip](llm_runs/20260922T225358_991487Z.zip) |
+
+The data split, seed and generation settings are the same in every run, so the runs can be compared fairly. The **10-step setup check** confirmed that the notebook runs from top to bottom and saves everything. The model barely learned: the loss dropped from 4.93 to 4.21, the samples were still random words, and the eval score stayed at the untrained 9/48. I had predicted the loss would stay close to 4.91; it fell more than expected, but was still nowhere near the 0.68 reached after 3,000 steps.
+
+### Loss: training and validation (fixed panels of 20 passages each)
+
+| Step | Starter train | Starter validation | Expanded train | Expanded validation |
+|---:|---:|---:|---:|---:|
+| 0 | 4.9263 | 4.9275 | 6.1928 | 6.1908 |
+| 1,500 | 0.6821 | 0.7182 | 0.8099 | 0.8459 |
+| 3,000 | 0.6783 | 0.7061 | 0.7717 | 0.7702 |
+
+| Starter | Expanded |
+|---|---|
+| ![starter loss curves](llm_runs/20260922T224924_640441Z/training_curves.svg) | ![expanded loss curves](llm_runs/20260922T225358_991487Z/training_curves.svg) |
+
+Before training, the loss equals a blind guess among all words (ln 136 = 4.91). Most of the drop happened in the first half, and validation stayed close to training. The two runs' losses can't be compared with each other because they use different vocabularies.
+
+### Samples: before, halfway, after (starter, same settings)
+
+| Step | Sample |
+|---|---|
+| 0 | `pear professor bond doctor course harvest team physician journey checking buyer …` |
+| 1,500 | `our school has a question about the new educator and lesson .` |
+| 3,000 | `our school has a question about the new educator and lesson .` |
+
+Random words turned into correct template sentences by step 1,500. Halfway and final match because the sampling seed is fixed and the model barely changed after that. Full files: [step 0](llm_runs/20260922T224924_640441Z/samples/step_0000.txt) · [step 1,500](llm_runs/20260922T224924_640441Z/samples/step_1500.txt) · [step 3,000](llm_runs/20260922T224924_640441Z/samples/step_3000.txt).
+
+### One word, followed all the way through (starter run)
+
+1. **Token → ID.** The word `customer` is token ID **28**, meaning row 28 in a 136-row table. The ID is just a position in an alphabetical list.
+2. **Embedding.** Row 28 holds 64 numbers. First 5 before training: `[-0.0576, -0.0048, 0.0426, 0.0193, 0.0156]` (random). After training: `[0.0366, -0.0182, 0.1330, 0.1059, 0.0630]`. Its closest words went from bus, educator and helped (similarity about 0.2, meaningless) to **shopper 0.978, client 0.977 and buyer 0.977**. Those words fill the same sentence slots.
+3. **Weight update.** At step 1, the first of those 64 numbers had gradient **+0.000693**. Positive means "raising this number would make the loss worse," so AdamW lowered it from **−0.0575919 to −0.0576019**. That is one learning-rate-sized step of 0.00001, the warmup rate at step 1.
+4. **Prediction.** For `the customer`, the most likely next word before training was `customer` at 0.016, close to a uniform 1/136. After training, the top five are **reviewed 0.178, recommended 0.171, ordered 0.169, selected 0.163 and compared 0.160**: the five verbs that really follow "the customer" in the corpus.
+5. **Attention.** For `<BOS> the customer`, one attention head at the word "customer" reads 0.49 from `<BOS>`, 0.42 from "the" and 0.09 from itself. Every future position is exactly 0, because the causal mask stops the model from looking ahead.
+
+### Temperature (same model, same random seed, no weights changed)
+
+| Temperature | Starter, 2nd sample |
+|---|---|
+| 0.3 | `a review of risk helped us understand the different investment .` |
+| 0.8 | `a review of risk helped us understand the different deposit .` |
+| 1.2 | `a review of risk helped us understand the different deposit .` |
+
+A lower temperature makes the model stick to its top choices, and a higher one gives unlikely words more chance. The trained starter model is so confident that 0.8 and 1.2 gave identical text. The expanded model at 1.2 produced odder lines, such as `the letter is inside the bell .`. Source: [starter](llm_runs/20260922T224924_640441Z/temperature_comparison.json) · [expanded](llm_runs/20260922T225358_991487Z/temperature_comparison.json).
+
 ## Actual browser interactions
 
 These are generated through the browser interface using the expanded model, 3,000 steps, temperature 0.8. The [downloaded browser transcript](results/browser/browser-transcript.json) includes the complete settings, model fingerprint, and timestamps.
@@ -60,6 +120,7 @@ I directed this project and made the choices: the corpus, the settings, the four
 | Sep 22, 2026 | Claude Code | Ran both experiments locally (3,000 steps, lr 0.001). Wrote the extension corpus generator, found and fixed the missing-distractor problem (v1 → v2), saved chat transcripts, and wrote the experiment report. | Every number in the report was checked against the saved JSON, and 9 claims were corrected. Evals rerun from the saved `model.pt` files matched the notebooks (28/48 and 20/48). |
 | Sep 29, 2026 | Codex | Reviewed the repository and the assignment, proposed TrashGPT, and built the local server, web page, launcher and tests. Toned down two overclaims in the report. | 19 automated tests passed. Browser checks were done at desktop and phone widths ([verification log](results/browser/QA.md)). |
 | Sep 30, 2026 | Claude Code | Stopped Vercel from trying to deploy this local-only app on every push, and added this section. | TrashGPT and eval tests pass (10 tests). The live app reproduced `a goose .` with the same model fingerprint (`f26904a1…`). |
+| Sep 30, 2026 | Claude Code | Checked the repo against the Class 4 assignment page. Ran the missing 10-step setup check, and moved the required evidence (loss, samples, token trace, weight update, attention, temperature, limitation, next experiment) back into this README. | Values copied from the saved JSON files. The setup run used the classroom corpus only, and the extension files were restored unchanged afterward. |
 
 <details>
 <summary><strong>The original experiments and complete evidence</strong></summary>
@@ -128,3 +189,9 @@ Original model, notebooks, fixed tests, helper hashes, and saved experiment arti
 This redesign is local. It does not publish a website or change the GitHub repository automatically. [vercel.json](vercel.json) turns off Vercel's automatic deployments: TrashGPT needs PyTorch and a local server, so it cannot run as a Vercel function.
 
 </details>
+
+## One limitation and one next experiment
+
+**Limitation.** The model learns sentence patterns, not meanings. It went 0 for 3 on opposites, with every answer probability below 0.01. For `the opposite of big is` it answered `big .`, although "the opposite of big is small ." appears word for word in its training text. Some results also depend on the particular run: the box→blue negation case was correct in my first expanded run and wrong in the second.
+
+**Next experiment.** Train the expanded corpus three times with three different random seeds, changing nothing else, and report the average and spread for each eval category. That would show which results are dependable and which were luck. I predict spatial relations stays 3/3 every time, because its probabilities are above 0.98, while negation and categories swing between 0 and 2 out of 3.
