@@ -51,6 +51,16 @@ These are generated through the browser interface using the expanded model, 3,00
 
 The raccoon and management captions are authored presentation. **They are never substituted for model output.** Blank replies stay blank in exported data and display as `[empty response]`. Each prompt starts fresh; unfamiliar words and context truncation are shown. Changing temperature changes sampling, not weights. Session history lives in the page until you download it; refreshing starts a new session.
 
+## How this was built
+
+I directed this project and made the choices: the corpus, the settings, the four extension categories, and the TrashGPT redesign. The code, the experiment runs, and most of the written explanations were produced with AI coding assistants. No model API was used for training or inference: every model reply comes from the nanoGPT weights saved in this repository.
+
+| Date | Tool | What it did | How it was checked |
+|---|---|---|---|
+| Sep 22, 2026 | Claude Code | Ran both experiments locally (3,000 steps, lr 0.001). Wrote the extension corpus generator, found and fixed the missing-distractor problem (v1 → v2), saved chat transcripts, and wrote the experiment report. | Every number in the report was checked against the saved JSON, and 9 claims were corrected. Evals rerun from the saved `model.pt` files matched the notebooks (28/48 and 20/48). |
+| Sep 29, 2026 | Codex | Reviewed the repository and the assignment, proposed TrashGPT, and built the local server, web page, launcher and tests. Toned down two overclaims in the report. | 19 automated tests passed. Browser checks were done at desktop and phone widths ([verification log](results/browser/QA.md)). |
+| Sep 30, 2026 | Claude Code | Stopped Vercel from trying to deploy this local-only app on every push, and added this section. | TrashGPT and eval tests pass (10 tests). The live app reproduced `a goose .` with the same model fingerprint (`f26904a1…`). |
+
 <details>
 <summary><strong>The original experiments and complete evidence</strong></summary>
 
@@ -115,6 +125,6 @@ The lab checks all four result sets, all four models at three temperatures, unch
 
 Original model, notebooks, fixed tests, helper hashes, and saved experiment artifacts remain intact. Models are randomly initialized and trained locally, not pretrained chat assistants. The pinned [nanoGPT source](https://github.com/karpathy/nanoGPT) and [MIT license](NANOGPT_LICENSE) remain included. The [course starter](https://github.com/pepealonso95/custom-llm) and [original instructions](README_STARTER.md) are retained as references.
 
-This redesign is local. It does not publish a website or change the GitHub repository automatically.
+This redesign is local. It does not publish a website or change the GitHub repository automatically. [vercel.json](vercel.json) turns off Vercel's automatic deployments: TrashGPT needs PyTorch and a local server, so it cannot run as a Vercel function.
 
 </details>
