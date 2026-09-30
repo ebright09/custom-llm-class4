@@ -1,0 +1,58 @@
+{
+  "format": "trashgpt-transcript-v1",
+  "exported_at": "2026-09-30T05:22:42.788Z",
+  "note": "Actual local model outputs. Management commentary is not model output.",
+  "turns": [
+    {
+      "experiment": "expanded",
+      "stage": "final",
+      "run": "20260922T225358_991487Z",
+      "model_sha256": "f26904a1bb5a18e3cb5f70cedbad4c13656af81ffae64588964f0b6a2a6d9fe3",
+      "completed_steps": 3000,
+      "prompt": "the cup is not full . it is",
+      "seed": 2029,
+      "temperature": 0.8,
+      "max_tokens": 24,
+      "fresh_context_per_prompt": true,
+      "context_tokens": 48,
+      "timestamp": "2026-09-30T05:20:02.212197+00:00",
+      "response": "a goose .",
+      "unknown_prompt_words": [],
+      "prompt_truncated": false
+    },
+    {
+      "experiment": "expanded",
+      "stage": "final",
+      "run": "20260922T225358_991487Z",
+      "model_sha256": "f26904a1bb5a18e3cb5f70cedbad4c13656af81ffae64588964f0b6a2a6d9fe3",
+      "completed_steps": 3000,
+      "prompt": "the clock is above the sofa . the sofa is",
+      "seed": 2027,
+      "temperature": 0.8,
+      "max_tokens": 24,
+      "fresh_context_per_prompt": true,
+      "context_tokens": 48,
+      "timestamp": "2026-09-30T05:22:42.013047+00:00",
+      "response": "below the clock .",
+      "unknown_prompt_words": [],
+      "prompt_truncated": false
+    },
+    {
+      "experiment": "expanded",
+      "stage": "final",
+      "run": "20260922T225358_991487Z",
+      "model_sha256": "f26904a1bb5a18e3cb5f70cedbad4c13656af81ffae64588964f0b6a2a6d9fe3",
+      "completed_steps": 3000,
+      "prompt": "the opposite of big is",
+      "seed": 2028,
+      "temperature": 0.8,
+      "max_tokens": 24,
+      "fresh_context_per_prompt": true,
+      "context_tokens": 48,
+      "timestamp": "2026-09-30T05:22:42.527974+00:00",
+      "response": "big .",
+      "unknown_prompt_words": [],
+      "prompt_truncated": false
+    }
+  ]
+}

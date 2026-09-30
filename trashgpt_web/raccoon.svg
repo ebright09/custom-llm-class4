@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 320" role="img" aria-labelledby="title">
+<title id="title">A raccoon in a tie with an oversized management badge</title>
+<g stroke="#262a26" stroke-width="5" stroke-linejoin="round">
+<path d="M221 204c91-58 107 59 30 83" fill="#9caaa0"/>
+<path d="M244 210l30 22m-25 13 28 24" fill="none" stroke-width="19"/>
+<path d="M77 314l7-106 130-2 27 108" fill="#355a46"/>
+<path d="M96 218l49 25 53-29-12 50-39-19-37 22z" fill="#eee9d8"/>
+<path d="M142 241l16 1 8 17-9 42-17-38z" fill="#e6a852"/>
+<path d="M58 86Q28 2 104 52m92 0q76-50 48 36" fill="#9caaa0"/>
+<path d="M77 70L62 41l35 18m112 0 24-20-8 37" fill="#343b35"/>
+<path d="M50 99q13-62 101-59 82-3 103 64l17 38-33 7 8 25-26-2q-27 61-70 62-43 0-74-56l-32-1 15-29-29-8z" fill="#b8c2b5"/>
+<path d="M55 121q40-51 87-14l9 21 12-22q52-32 82 14l-19 45-65-20-16-1-66 23z" fill="#343b35"/>
+<ellipse cx="108" cy="124" rx="13" ry="17" fill="#f6f2e5"/>
+<ellipse cx="193" cy="124" rx="13" ry="17" fill="#f6f2e5"/>
+<circle cx="113" cy="128" r="4" fill="#262a26"/><circle cx="198" cy="128" r="4" fill="#262a26"/>
+<path d="M119 166q30-26 63 0l-17 38-28 1z" fill="#eee9d8" stroke="none"/>
+<path d="M138 163q13-9 26 0l-13 12z" fill="#262a26"/>
+<path d="M150 176v15q12 6 23-1" fill="none" stroke-width="3"/>
+<path d="M199 223l-8 50" fill="none" stroke="#e6a852"/>
+<g transform="rotate(8 204 275)"><rect x="168" y="249" width="104" height="65" rx="5" fill="#f7f3e7"/><path d="M199 249v-7h25v7" fill="none"/><path d="M179 261h83" stroke="#e6a852" stroke-width="7"/><text x="220" y="285" text-anchor="middle" font-family="Arial,sans-serif" font-weight="700" font-size="12" fill="#262a26" stroke="none">MANAGEMENT</text><text x="220" y="301" text-anchor="middle" font-family="Arial,sans-serif" font-size="9" fill="#262a26" stroke="none">somehow.</text></g>
+</g></svg>
